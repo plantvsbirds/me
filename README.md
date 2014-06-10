@@ -1,14 +1,14 @@
 林鸿 | Henry Lin
 ==
 *编程技能 :* 
-- Node.js 编程 *Express, 各种模板引擎，数据库Driver使用经验*
-- 前端CSS与JavaScript编写 *idea2CSS，解决兼容性问题，优化加载速度，响应式设计，移动设备优化经验*
-- *Ruby, Clojure, Java代码阅读*  
+- Node.js 编程 *使用Express框架, 各种模板引擎，数据库Driver*
+- 前端CSS与JavaScript编写 *把设计用CSS实现。解决兼容性问题，优化加载速度，做响应式设计，优化移动设备体验*
+- *阅读Ruby, Clojure, Java代码*  
 
 *除此之外 :*
-- Linux服务器SA *四年Linux使用经验，项目部署维护*
-- 算法应用、优化 *算法竞赛经验*
-- 英文沟通、社区交流、文档阅读 *TOEFL Reading(29/30)*  
+- Linux服务器SA *四年Linux使用经验，项目部署维护经验*
+- 算法应用、优化 *有算法竞赛经验*
+- 英文沟通、社区交流、文档阅读 *轻轻松松！TOEFL Reading(29/30)*  
 
 *经验 :*
 - MyOILife.com(已倒闭) *设计师、前端*
