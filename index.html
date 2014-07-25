@@ -9,6 +9,10 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
+    <script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/mootools/1.5.0/mootools-core-full-compat.min.js"></script>
+    <script src="http://cdn.staticfile.org/mootools-more/1.5.0/mootools-more.js"></script>
+    <script src="wall.js"></script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -28,8 +32,51 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-
-
+<style>
+/* Minimal Css Required */
+#viewport{
+    width:900px;
+    height:450px;
+    position:relative;
+    overflow:hidden;
+    margin:0 auto;
+    background:#111111  ;
+}
+ 
+#wall{
+    z-index:1;
+}
+</style>
+<!-- Viewport and Wall -->
+<div id="viewport">
+    <div id="wall"></div>
+</div>
+<!-- END Viewport and Wall -->
+<script>
+$(document).ready(function (){
+var maxLength    = 10; // Max Number images
+var counterFluid = 1;
+var wallFluid = new Wall("wall", {
+                "draggable":true,
+                "inertia":true,
+                "width":150,
+                "height":150,
+                "rangex":[-100,100],
+                "rangey":[-100,100],
+                callOnUpdate: function(items){
+                    items.each(function(e, i){
+                        var a = new Element("img[src=images/"+counterFluid+".jpg]");
+                            a.inject(e.node).fade("hide").fade("in");
+                        counterFluid++;
+                        // Reset counter
+                        if( counterFluid > maxLength ) counterFluid = 1;
+                    })
+                }
+            });
+// Init Fluid Wall
+wallFluid.initWall();
+});
+</script>
 
 <p><em>编程技能 :</em> </p>
 
