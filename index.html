@@ -54,8 +54,24 @@
 <!-- END Viewport and Wall -->
 <script>
 $(document).ready(function (){
-var maxLength    = 10; // Max Number images
-var counterFluid = 1;
+var maxLength    = 15; // Max Number images
+var counterFluid = 0;
+var imgSrcs = ['https://cloud.githubusercontent.com/assets/6203430/3962288/636625c4-2767-11e4-965b-27e28d303c28.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962291/63c514a8-2767-11e4-9a3a-143b95bb69ba.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962292/63c8c800-2767-11e4-9b47-c55d6695b704.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962293/63dd92d0-2767-11e4-8355-d81b5d1f55b3.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962290/63c3678e-2767-11e4-968b-5a254a40f876.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962304/67cb8f28-2767-11e4-986e-c2c8b0d67b12.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962289/63987434-2767-11e4-91d5-b60f857f498d.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962294/63fb7232-2767-11e4-95d1-6b414b220e55.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962295/6404cf44-2767-11e4-8202-a521d6ef91e7.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962296/64066048-2767-11e4-9c30-146962248aae.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962297/64175ad8-2767-11e4-99cf-e62040561799.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962298/642ebe12-2767-11e4-82bf-7fb3cc0c3b54.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962300/643ff7d6-2767-11e4-96f0-381e6f80c60b.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962299/643e79c4-2767-11e4-8633-9c8e9fb65206.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962301/64544e16-2767-11e4-9675-8dbb5a8de28c.png',
+'https://cloud.githubusercontent.com/assets/6203430/3962302/645f228c-2767-11e4-92cf-c0b8bd84b969.png']
 var wallFluid = new Wall("wall", {
                 "draggable":true,
                 "inertia":true,
@@ -65,11 +81,11 @@ var wallFluid = new Wall("wall", {
                 "rangey":[-100,100],
                 callOnUpdate: function(items){
                     items.each(function(e, i){
-                        var a = new Element("img[src=images/"+counterFluid+".jpg]");
+                        var a = new Element("img[src="+imgSrcs[counterFluid]+"]");
                             a.inject(e.node).fade("hide").fade("in");
                         counterFluid++;
                         // Reset counter
-                        if( counterFluid > maxLength ) counterFluid = 1;
+                        if( counterFluid > maxLength ) counterFluid = 0;
                     })
                 }
             });
